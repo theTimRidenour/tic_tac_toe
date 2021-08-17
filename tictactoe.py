@@ -1,34 +1,35 @@
 
 from os import name, system
 
-choices = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+choices = [0] * 9
+option_screen = ['   7 | 8 | 9', '   4 | 5 | 6', '   1 | 2 | 3']
 
 def board(choices = choices):
     ''' Build the tic-tac-toe board, and
      and Xs for user and Os for computer
      choices. '''
-    if choices[0] == 1:
+    if choices[6] == 1:
         print (' X ', end = '|')
-    elif choices[0] == 2:
+    elif choices[6] == 2:
         print (' O ', end = '|')
     else:
         print ('   ', end = '|')
     
-    if choices[1] == 1:
+    if choices[7] == 1:
         print (' X ', end = '|')
-    elif choices[1] == 2:
+    elif choices[7] == 2:
         print (' O ', end = '|')
     else:
         print ('   ', end = '|')
 
-    if choices[2] == 1:
-        print (' X ')
-    elif choices[2] == 2:
-        print (' O ')
+    if choices[8] == 1:
+        print (' X ', option_screen[0])
+    elif choices[8] == 2:
+        print (' O ', option_screen[0])
     else:
-        print ('   ')
+        print ('   ', option_screen[0])
 
-    print('---+---+---')
+    print('---+---+---   ---+---+---')
 
     if choices[3] == 1:
         print (' X ', end = '|')
@@ -45,34 +46,34 @@ def board(choices = choices):
         print ('   ', end = '|')
 
     if choices[5] == 1:
-        print (' X ')
+        print (' X ', option_screen[1])
     elif choices[5] == 2:
-        print (' O ')
+        print (' O ', option_screen[1])
     else:
-        print ('   ')    
+        print ('   ', option_screen[1])
 
-    print('---+---+---')
+    print('---+---+---   ---+---+---')
     
-    if choices[6] == 1:
+    if choices[0] == 1:
         print (' X ', end = '|')
-    elif choices[6] == 2:
+    elif choices[0] == 2:
         print (' O ', end = '|')
     else:
         print ('   ', end = '|')
     
-    if choices[7] == 1:
+    if choices[1] == 1:
         print (' X ', end = '|')
-    elif choices[7] == 2:
+    elif choices[1] == 2:
         print (' O ', end = '|')
     else:
         print ('   ', end = '|')
 
-    if choices[8] == 1:
-        print (' X ')
-    elif choices[8] == 2:
-        print (' O ')
+    if choices[2] == 1:
+        print (' X ', option_screen[2])
+    elif choices[2] == 2:
+        print (' O ', option_screen[2])
     else:
-        print ('   ')
+        print ('   ', option_screen[2])
 
 def check_if_winner(choices = choices, player = 1):
     title()
@@ -207,9 +208,9 @@ def computer_move(choices = choices):
         choices[2] = 2
     
     # if no one can win choose empty slot
-    # check middle first
-    # then check centers
-    # finally check corners
+    #     check middle first
+    #     then check centers
+    #     finally check corners
     elif choices[4] == 0:
         choices[4] = 2
     elif choices[1] == 0:
